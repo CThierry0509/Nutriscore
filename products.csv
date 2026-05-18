@@ -1,0 +1,51 @@
+Product,Category,Score,Sugar,Additives,Contaminants,Transparency,Notes,Source_URL
+Mott's 100% Apple Juice,Juice,D,High,Low,Arsenic/heavy metals: category concern,Medium,Public concern category: apple juice has been monitored for inorganic arsenic. Verify brand-specific data before publishing.,https://www.fda.gov/food/environmental-contaminants-food/lead-food-foodwares-and-dietary-supplements
+Great Value Apple Juice,Juice,D,High,Low,Arsenic/heavy metals: category concern,Low,Private-label juice. Use as comparison target; verify lot/product data.,https://www.fda.gov/food/metals-and-your-food
+Welch's Grape Juice,Juice,C,High,Low,Heavy metals: category concern,Medium,High natural sugar; contaminant claims require source confirmation.,https://www.fda.gov/food/total-diet-study
+Capri Sun Fruit Punch,Juice Drink,D,High,Medium,No public product-specific contaminant data,Medium,Juice drink; score driven by sugar and processing.,https://fdc.nal.usda.gov/
+Minute Maid Apple Juice,Juice,D,High,Low,Arsenic/heavy metals: category concern,Medium,Category concern; avoid product-specific claim until verified.,https://www.fda.gov/food/metals-and-your-food
+Barefoot Chardonnay,Wine,D,Unknown,Sulfites,Arsenic: category concern in some wine testing,Low,Alcohol lacks full nutrition labeling; contaminant claims require verified testing.,https://www.ttb.gov/wine/labeling
+Yellow Tail Chardonnay,Wine,D,Unknown,Sulfites,Arsenic: category concern in some wine testing,Low,Use 'disclosure gap' language unless lab results are available.,https://www.ttb.gov/labeling/labeling-resources
+Gallo Family Vineyards Cabernet Sauvignon,Wine,D,Unknown,Sulfites,No public product-specific contaminant data,Low,"Wine scoring focuses on disclosure, sulfites, and lack of nutrition panel.",https://www.ttb.gov/wine/labeling
+Franzia Chardonnay,Wine,D,Unknown,Sulfites,No public product-specific contaminant data,Low,Bulk wine; transparency score should remain conservative.,https://www.ttb.gov/wine/labeling
+Beringer Main & Vine White Zinfandel,Wine,D,Unknown,Sulfites,No public product-specific contaminant data,Low,Alcoholic beverage; do not use classic Nutri-Score; use disclosure score.,https://www.ttb.gov/labeling/labeling-resources
+Kellogg's Frosted Flakes,Cereal,D,High,Medium,No public product-specific contaminant data,Medium,Score driven by sugar and processing.,https://fdc.nal.usda.gov/
+Kellogg's Corn Flakes,Cereal,C,Low,Medium,No public product-specific contaminant data,Medium,Lower sugar than many cereals; sodium/additives affect score.,https://world.openfoodfacts.org/
+General Mills Cheerios,Cereal,B,Low,Low,No public product-specific contaminant data,Medium,Simple cereal; verify glyphosate claims before publication.,https://fdc.nal.usda.gov/
+Cinnamon Toast Crunch,Cereal,D,High,Medium,No public product-specific contaminant data,Medium,High sugar cereal; strong viral comparison category.,https://fdc.nal.usda.gov/
+Quaker Instant Oatmeal Maple & Brown Sugar,Oatmeal,C,Medium,Medium,No public product-specific contaminant data,Medium,Better than candy cereals but added sugar matters.,https://fdc.nal.usda.gov/
+Nutella,Spread,D,High,Medium,No public product-specific contaminant data,Medium,High sugar/fat spread; good EU/US comparison candidate.,https://world.openfoodfacts.org/
+Jif Creamy Peanut Butter,Spread,C,Medium,Medium,No public product-specific contaminant data,Medium,Protein positive; added sugar/oils reduce score.,https://fdc.nal.usda.gov/
+Skippy Creamy Peanut Butter,Spread,C,Medium,Medium,No public product-specific contaminant data,Medium,Similar to Jif; use for category benchmark.,https://fdc.nal.usda.gov/
+Oreo Original,Cookie,E,High,High,No public product-specific contaminant data,Medium,Ultra-processed sweet snack.,https://world.openfoodfacts.org/
+Chips Ahoy Original,Cookie,E,High,High,No public product-specific contaminant data,Medium,Ultra-processed sweet snack.,https://fdc.nal.usda.gov/
+Lay's Classic Potato Chips,Snack,D,Low,Medium,Acrylamide: category concern,Medium,Fried snack; category concern for acrylamide should be phrased carefully.,https://www.fda.gov/food/process-contaminants-food/acrylamide
+Doritos Nacho Cheese,Snack,E,Low,High,No public product-specific contaminant data,Medium,Ultra-processed snack with additive load.,https://world.openfoodfacts.org/
+Pringles Original,Snack,D,Low,Medium,Acrylamide: category concern,Medium,Processed fried snack; compare ingredients by market.,https://www.fda.gov/food/process-contaminants-food/acrylamide
+Cheetos Crunchy,Snack,E,Low,High,No public product-specific contaminant data,Medium,Ultra-processed snack; additives and sodium drive score.,https://fdc.nal.usda.gov/
+Heinz Tomato Ketchup,Condiment,C,High,Medium,No public product-specific contaminant data,Medium,Sugar/sodium are key; strong EU/US label comparison item.,https://world.openfoodfacts.org/
+Hidden Valley Ranch,Condiment,D,Low,High,No public product-specific contaminant data,Medium,Additive load and sodium drive score.,https://fdc.nal.usda.gov/
+Campbell's Tomato Soup,Soup,C,Medium,Medium,No public product-specific contaminant data,Medium,Sodium generally drives concern in canned soups.,https://fdc.nal.usda.gov/
+Progresso Chicken Noodle Soup,Soup,C,Low,Medium,No public product-specific contaminant data,Medium,Sodium/processing score; verify exact label.,https://fdc.nal.usda.gov/
+Stouffer's Lasagna,Frozen Meal,D,Medium,Medium,No public product-specific contaminant data,Medium,Sodium/saturated fat and processing drive score.,https://fdc.nal.usda.gov/
+Marie Callender's Chicken Pot Pie,Frozen Meal,D,Medium,Medium,No public product-specific contaminant data,Medium,Sodium/saturated fat; portion size caution.,https://fdc.nal.usda.gov/
+Ben & Jerry's Chocolate Fudge Brownie,Ice Cream,E,High,Medium,No public product-specific contaminant data,Medium,High sugar/saturated fat dessert.,https://world.openfoodfacts.org/
+Haagen-Dazs Vanilla Ice Cream,Ice Cream,D,High,Low,No public product-specific contaminant data,Medium,Cleaner ingredient list than many desserts; still high sugar/fat.,https://fdc.nal.usda.gov/
+Yoplait Original Strawberry Yogurt,Yogurt,C,High,Medium,No public product-specific contaminant data,Medium,Yogurt halo; added sugar matters.,https://fdc.nal.usda.gov/
+Chobani Plain Greek Yogurt,Yogurt,A,Low,Low,No public product-specific contaminant data,High,"High protein, low sugar, simple ingredients.",https://fdc.nal.usda.gov/
+Activia Vanilla Yogurt,Yogurt,C,Medium,Medium,No public product-specific contaminant data,Medium,Added sugar and formulation determine score.,https://world.openfoodfacts.org/
+Philadelphia Cream Cheese,Dairy,D,Low,Medium,No public product-specific contaminant data,Medium,Saturated fat; portion dependent.,https://fdc.nal.usda.gov/
+Coca-Cola Classic,Soda,E,High,Medium,No public product-specific contaminant data,High,High added sugar; very transparent label but poor nutrition.,https://fdc.nal.usda.gov/
+Pepsi,Soda,E,High,Medium,No public product-specific contaminant data,High,High added sugar; transparent label but low nutrition score.,https://fdc.nal.usda.gov/
+Gatorade Lemon Lime,Sports Drink,D,High,Medium,No public product-specific contaminant data,Medium,Sugar/electrolyte drink; context matters.,https://fdc.nal.usda.gov/
+Red Bull Energy Drink,Energy Drink,D,High,Medium,Caffeine disclosure concern,Medium,Sugar/caffeine; not a daily nutrition product.,https://fdc.nal.usda.gov/
+Starbucks Bottled Frappuccino,Coffee Drink,E,High,Medium,No public product-specific contaminant data,Medium,Sugary coffee beverage; strong viral example.,https://fdc.nal.usda.gov/
+McDonald's Big Mac,Fast Food,D,Medium,Medium,No public product-specific contaminant data,High,Fast-food transparency generally better online; nutrition score remains weak.,https://www.mcdonalds.com/us/en-us/about-our-food/nutrition-calculator.html
+McDonald's French Fries,Fast Food,D,Low,Medium,Acrylamide: category concern,High,Fried potato product; category concern for acrylamide.,https://www.fda.gov/food/process-contaminants-food/acrylamide
+Chick-fil-A Chicken Sandwich,Fast Food,D,Medium,Medium,No public product-specific contaminant data,High,Sodium and frying drive score.,https://www.chick-fil-a.com/nutrition-allergens
+Subway 6-inch Turkey Sandwich,Fast Food,B,Low,Medium,No public product-specific contaminant data,High,Potentially better option; depends on bread/sauce choices.,https://www.subway.com/en-US/MenuNutrition/Nutrition
+Taco Bell Crunchy Taco,Fast Food,C,Low,Medium,No public product-specific contaminant data,High,Moderate score; sodium and processing matter.,https://www.tacobell.com/nutrition/info
+Impossible Burger Patty,Plant-Based,C,Low,Medium,No public product-specific contaminant data,Medium,Plant-based does not automatically equal A; sodium/processing matter.,https://fdc.nal.usda.gov/
+Beyond Burger Patty,Plant-Based,C,Low,Medium,No public product-specific contaminant data,Medium,Protein positive; sodium/processing reduce score.,https://fdc.nal.usda.gov/
+Amy's Organic Lentil Soup,Soup,B,Low,Low,No public product-specific contaminant data,High,Organic/simpler ingredients; sodium must be verified.,https://world.openfoodfacts.org/
+LaraBar Peanut Butter Chocolate Chip,Snack Bar,B,Medium,Low,No public product-specific contaminant data,High,"Simple ingredients, but sugar remains relevant.",https://world.openfoodfacts.org/
