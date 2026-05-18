@@ -1,164 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Clean Food Score - MVP</title>
-  <meta name="description" content="Search what Americans really eat. A fast MVP for nutrition, transparency and contaminant disclosure.">
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Clean Food Score™</title>
+
   <style>
-    :root{
-      --olive:#3B4A34; --lime:#B5E050; --cream:#F7F6EF; --ink:#1D241B; --muted:#687062; --card:#FFFFFF;
-      --red:#C84A3A; --orange:#E69235; --yellow:#D9B83F; --green:#6E9F3F;
+
+    :root {
+
+      --olive: #3B4A34;
+
+      --lime: #B5E050;
+
+      --light: #F7F8F4;
+
+      --dark: #1F241C;
+
+      --muted: #6B7564;
+
+      --card: #FFFFFF;
+
+      --border: #DDE3D2;
+
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--ink);}
-    .wrap{max-width:1050px;margin:auto;padding:28px}
-    header{padding:42px 0 24px;display:flex;justify-content:space-between;gap:20px;align-items:center}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--olive) 0 50%,var(--lime) 50%);position:relative}
-    .logo:after{content:"";position:absolute;left:25px;top:0;width:8px;height:56px;background:var(--cream);border-radius:50%}
-    h1{font-size:clamp(38px,7vw,82px);line-height:.95;margin:24px 0 12px;color:var(--olive);letter-spacing:-2px}
-    h2{font-size:28px;color:var(--olive);margin:0 0 12px}
-    .tag{font-size:18px;color:var(--muted);max-width:780px}
-    .pill{display:inline-block;background:rgba(181,224,80,.22);border:1px solid rgba(59,74,52,.18);padding:7px 12px;border-radius:999px;color:var(--olive);font-weight:bold}
-    .hero{padding:24px 0 34px;border-bottom:1px solid rgba(59,74,52,.15)}
-    .searchbox{display:flex;gap:10px;margin:28px 0 16px}
-    input,select{width:100%;padding:15px 16px;border:1px solid rgba(59,74,52,.25);border-radius:14px;background:#fff;font-size:17px;color:var(--ink)}
-    button{padding:14px 18px;border:0;border-radius:14px;background:var(--olive);color:#fff;font-weight:bold;cursor:pointer}
-    .grid{display:grid;grid-template-columns:1fr 330px;gap:22px;margin-top:24px}
-    @media(max-width:850px){.grid{grid-template-columns:1fr}header{display:block}.searchbox{display:block}button{margin-top:10px;width:100%}}
-    .card{background:var(--card);border:1px solid rgba(59,74,52,.12);border-radius:22px;padding:22px;box-shadow:0 10px 35px rgba(59,74,52,.08)}
-    .result{display:grid;grid-template-columns:80px 1fr;gap:18px;align-items:center;border-bottom:1px solid rgba(59,74,52,.1);padding:16px 0}
-    .result:last-child{border-bottom:0}
-    .score{width:72px;height:72px;border-radius:20px;display:grid;place-items:center;font-size:38px;font-weight:900;color:#fff}
-    .score.A{background:#4F8D3A}.score.B{background:#84A83B}.score.C{background:#C9A936}.score.D{background:#D9792E}.score.E{background:#B93B30}
-    .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .chip{font-size:12px;background:#F1F0E8;border:1px solid rgba(59,74,52,.12);border-radius:999px;padding:5px 8px;color:var(--muted)}
-    .small{font-size:13px;color:var(--muted)}
-    .cta{background:linear-gradient(135deg,var(--olive),#1f2b1e);color:#fff}
-    .cta h2{color:#fff}.cta .small{color:#d9dfd2}
-    .email{display:flex;gap:8px;margin-top:14px}
-    .email input{border:0}
-    .notice{font-size:12px;color:var(--muted);margin-top:16px}
-    table{width:100%;border-collapse:collapse;font-size:14px}
-    td,th{border-bottom:1px solid rgba(59,74,52,.12);padding:9px;text-align:left}
-    th{color:var(--olive)}
-    footer{margin-top:40px;padding:24px 0;color:var(--muted);font-size:13px}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-label="Clean Food Score logo"></div>
-        <div>
-          <strong>CLEAN FOOD SCORE™</strong><br>
-          <span class="small">Truth you can taste.</span>
-        </div>
-      </div>
-      <span class="pill">MVP - V0.1</span>
-    </header>
 
-    <section class="hero">
-      <h1>What’s really in your food?</h1>
-      <p class="tag">Search everyday American products and see a simple A-E transparency score across nutrition, disclosure, and known concern categories. Built fast to test demand. No lab claims. No medical advice. Just clarity.</p>
+    body {
 
-      <div class="searchbox">
-        <input id="q" placeholder="Search: apple juice, wine, cereal, fast food..." autocomplete="off">
-        <select id="cat"><option value="">All categories</option></select>
-        <button onclick="runSearch()">Search</button>
-      </div>
-      <p class="small">Try: <a href="#" onclick="quick('apple juice')">apple juice</a> · <a href="#" onclick="quick('wine')">wine</a> · <a href="#" onclick="quick('cereal')">cereal</a> · <a href="#" onclick="quick('McDonald')">McDonald's</a></p>
-    </section>
+      margin: 0;
 
-    <div class="grid">
-      <main class="card">
-        <h2>Search results</h2>
-        <div id="results"></div>
-      </main>
-      <aside>
-        <div class="card cta">
-          <h2>Join early access</h2>
-          <p class="small">Get updates when the public database opens. Add restaurants, wines, juices, and grocery products.</p>
-          <div class="email"><input id="email" placeholder="email@example.com"><button onclick="capture()">Join</button></div>
-          <p id="emailMsg" class="small"></p>
-        </div>
-        <div class="card" style="margin-top:20px">
-          <h2>Score logic</h2>
-          <table>
-            <tr><th>A</th><td>Strong nutrition + high transparency.</td></tr>
-            <tr><th>B</th><td>Generally good, one moderate issue.</td></tr>
-            <tr><th>C</th><td>Acceptable, but notable concern.</td></tr>
-            <tr><th>D</th><td>Weak score or major disclosure gap.</td></tr>
-            <tr><th>E</th><td>High sugar / ultra-processed profile.</td></tr>
-          </table>
-          <p class="notice">Contaminant flags are category-level concerns unless product-specific lab data is cited.</p>
-        </div>
-      </aside>
-    </div>
+      font-family: Georgia, "Times New Roman", serif;
 
-    <footer>
-      Clean Food Score™ - MVP. Contact: thierrychateau@live.fr · Charleston, South Carolina. 
-      Educational use only. Not medical, legal, investment, or regulatory advice.
-    </footer>
-  </div>
+      background: var(--light);
 
-<script>
-const products = [{"Product": "Mott's 100% Apple Juice", "Category": "Juice", "Score": "D", "Sugar": "High", "Additives": "Low", "Contaminants": "Arsenic/heavy metals: category concern", "Transparency": "Medium", "Notes": "Public concern category: apple juice has been monitored for inorganic arsenic. Verify brand-specific data before publishing.", "Source_URL": "https://www.fda.gov/food/environmental-contaminants-food/lead-food-foodwares-and-dietary-supplements"}, {"Product": "Great Value Apple Juice", "Category": "Juice", "Score": "D", "Sugar": "High", "Additives": "Low", "Contaminants": "Arsenic/heavy metals: category concern", "Transparency": "Low", "Notes": "Private-label juice. Use as comparison target; verify lot/product data.", "Source_URL": "https://www.fda.gov/food/metals-and-your-food"}, {"Product": "Welch's Grape Juice", "Category": "Juice", "Score": "C", "Sugar": "High", "Additives": "Low", "Contaminants": "Heavy metals: category concern", "Transparency": "Medium", "Notes": "High natural sugar; contaminant claims require source confirmation.", "Source_URL": "https://www.fda.gov/food/total-diet-study"}, {"Product": "Capri Sun Fruit Punch", "Category": "Juice Drink", "Score": "D", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Juice drink; score driven by sugar and processing.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Minute Maid Apple Juice", "Category": "Juice", "Score": "D", "Sugar": "High", "Additives": "Low", "Contaminants": "Arsenic/heavy metals: category concern", "Transparency": "Medium", "Notes": "Category concern; avoid product-specific claim until verified.", "Source_URL": "https://www.fda.gov/food/metals-and-your-food"}, {"Product": "Barefoot Chardonnay", "Category": "Wine", "Score": "D", "Sugar": "Unknown", "Additives": "Sulfites", "Contaminants": "Arsenic: category concern in some wine testing", "Transparency": "Low", "Notes": "Alcohol lacks full nutrition labeling; contaminant claims require verified testing.", "Source_URL": "https://www.ttb.gov/wine/labeling"}, {"Product": "Yellow Tail Chardonnay", "Category": "Wine", "Score": "D", "Sugar": "Unknown", "Additives": "Sulfites", "Contaminants": "Arsenic: category concern in some wine testing", "Transparency": "Low", "Notes": "Use 'disclosure gap' language unless lab results are available.", "Source_URL": "https://www.ttb.gov/labeling/labeling-resources"}, {"Product": "Gallo Family Vineyards Cabernet Sauvignon", "Category": "Wine", "Score": "D", "Sugar": "Unknown", "Additives": "Sulfites", "Contaminants": "No public product-specific contaminant data", "Transparency": "Low", "Notes": "Wine scoring focuses on disclosure, sulfites, and lack of nutrition panel.", "Source_URL": "https://www.ttb.gov/wine/labeling"}, {"Product": "Franzia Chardonnay", "Category": "Wine", "Score": "D", "Sugar": "Unknown", "Additives": "Sulfites", "Contaminants": "No public product-specific contaminant data", "Transparency": "Low", "Notes": "Bulk wine; transparency score should remain conservative.", "Source_URL": "https://www.ttb.gov/wine/labeling"}, {"Product": "Beringer Main & Vine White Zinfandel", "Category": "Wine", "Score": "D", "Sugar": "Unknown", "Additives": "Sulfites", "Contaminants": "No public product-specific contaminant data", "Transparency": "Low", "Notes": "Alcoholic beverage; do not use classic Nutri-Score; use disclosure score.", "Source_URL": "https://www.ttb.gov/labeling/labeling-resources"}, {"Product": "Kellogg's Frosted Flakes", "Category": "Cereal", "Score": "D", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Score driven by sugar and processing.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Kellogg's Corn Flakes", "Category": "Cereal", "Score": "C", "Sugar": "Low", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Lower sugar than many cereals; sodium/additives affect score.", "Source_URL": "https://world.openfoodfacts.org/"}, {"Product": "General Mills Cheerios", "Category": "Cereal", "Score": "B", "Sugar": "Low", "Additives": "Low", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Simple cereal; verify glyphosate claims before publication.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Cinnamon Toast Crunch", "Category": "Cereal", "Score": "D", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "High sugar cereal; strong viral comparison category.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Quaker Instant Oatmeal Maple & Brown Sugar", "Category": "Oatmeal", "Score": "C", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Better than candy cereals but added sugar matters.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Nutella", "Category": "Spread", "Score": "D", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "High sugar/fat spread; good EU/US comparison candidate.", "Source_URL": "https://world.openfoodfacts.org/"}, {"Product": "Jif Creamy Peanut Butter", "Category": "Spread", "Score": "C", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Protein positive; added sugar/oils reduce score.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Skippy Creamy Peanut Butter", "Category": "Spread", "Score": "C", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Similar to Jif; use for category benchmark.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Oreo Original", "Category": "Cookie", "Score": "E", "Sugar": "High", "Additives": "High", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Ultra-processed sweet snack.", "Source_URL": "https://world.openfoodfacts.org/"}, {"Product": "Chips Ahoy Original", "Category": "Cookie", "Score": "E", "Sugar": "High", "Additives": "High", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Ultra-processed sweet snack.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Lay's Classic Potato Chips", "Category": "Snack", "Score": "D", "Sugar": "Low", "Additives": "Medium", "Contaminants": "Acrylamide: category concern", "Transparency": "Medium", "Notes": "Fried snack; category concern for acrylamide should be phrased carefully.", "Source_URL": "https://www.fda.gov/food/process-contaminants-food/acrylamide"}, {"Product": "Doritos Nacho Cheese", "Category": "Snack", "Score": "E", "Sugar": "Low", "Additives": "High", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Ultra-processed snack with additive load.", "Source_URL": "https://world.openfoodfacts.org/"}, {"Product": "Pringles Original", "Category": "Snack", "Score": "D", "Sugar": "Low", "Additives": "Medium", "Contaminants": "Acrylamide: category concern", "Transparency": "Medium", "Notes": "Processed fried snack; compare ingredients by market.", "Source_URL": "https://www.fda.gov/food/process-contaminants-food/acrylamide"}, {"Product": "Cheetos Crunchy", "Category": "Snack", "Score": "E", "Sugar": "Low", "Additives": "High", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Ultra-processed snack; additives and sodium drive score.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Heinz Tomato Ketchup", "Category": "Condiment", "Score": "C", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Sugar/sodium are key; strong EU/US label comparison item.", "Source_URL": "https://world.openfoodfacts.org/"}, {"Product": "Hidden Valley Ranch", "Category": "Condiment", "Score": "D", "Sugar": "Low", "Additives": "High", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Additive load and sodium drive score.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Campbell's Tomato Soup", "Category": "Soup", "Score": "C", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Sodium generally drives concern in canned soups.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Progresso Chicken Noodle Soup", "Category": "Soup", "Score": "C", "Sugar": "Low", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Sodium/processing score; verify exact label.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Stouffer's Lasagna", "Category": "Frozen Meal", "Score": "D", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Sodium/saturated fat and processing drive score.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Marie Callender's Chicken Pot Pie", "Category": "Frozen Meal", "Score": "D", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Sodium/saturated fat; portion size caution.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Ben & Jerry's Chocolate Fudge Brownie", "Category": "Ice Cream", "Score": "E", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "High sugar/saturated fat dessert.", "Source_URL": "https://world.openfoodfacts.org/"}, {"Product": "Haagen-Dazs Vanilla Ice Cream", "Category": "Ice Cream", "Score": "D", "Sugar": "High", "Additives": "Low", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Cleaner ingredient list than many desserts; still high sugar/fat.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Yoplait Original Strawberry Yogurt", "Category": "Yogurt", "Score": "C", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Yogurt halo; added sugar matters.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Chobani Plain Greek Yogurt", "Category": "Yogurt", "Score": "A", "Sugar": "Low", "Additives": "Low", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "High protein, low sugar, simple ingredients.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Activia Vanilla Yogurt", "Category": "Yogurt", "Score": "C", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Added sugar and formulation determine score.", "Source_URL": "https://world.openfoodfacts.org/"}, {"Product": "Philadelphia Cream Cheese", "Category": "Dairy", "Score": "D", "Sugar": "Low", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Saturated fat; portion dependent.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Coca-Cola Classic", "Category": "Soda", "Score": "E", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "High added sugar; very transparent label but poor nutrition.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Pepsi", "Category": "Soda", "Score": "E", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "High added sugar; transparent label but low nutrition score.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Gatorade Lemon Lime", "Category": "Sports Drink", "Score": "D", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Sugar/electrolyte drink; context matters.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Red Bull Energy Drink", "Category": "Energy Drink", "Score": "D", "Sugar": "High", "Additives": "Medium", "Contaminants": "Caffeine disclosure concern", "Transparency": "Medium", "Notes": "Sugar/caffeine; not a daily nutrition product.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Starbucks Bottled Frappuccino", "Category": "Coffee Drink", "Score": "E", "Sugar": "High", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Sugary coffee beverage; strong viral example.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "McDonald's Big Mac", "Category": "Fast Food", "Score": "D", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "Fast-food transparency generally better online; nutrition score remains weak.", "Source_URL": "https://www.mcdonalds.com/us/en-us/about-our-food/nutrition-calculator.html"}, {"Product": "McDonald's French Fries", "Category": "Fast Food", "Score": "D", "Sugar": "Low", "Additives": "Medium", "Contaminants": "Acrylamide: category concern", "Transparency": "High", "Notes": "Fried potato product; category concern for acrylamide.", "Source_URL": "https://www.fda.gov/food/process-contaminants-food/acrylamide"}, {"Product": "Chick-fil-A Chicken Sandwich", "Category": "Fast Food", "Score": "D", "Sugar": "Medium", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "Sodium and frying drive score.", "Source_URL": "https://www.chick-fil-a.com/nutrition-allergens"}, {"Product": "Subway 6-inch Turkey Sandwich", "Category": "Fast Food", "Score": "B", "Sugar": "Low", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "Potentially better option; depends on bread/sauce choices.", "Source_URL": "https://www.subway.com/en-US/MenuNutrition/Nutrition"}, {"Product": "Taco Bell Crunchy Taco", "Category": "Fast Food", "Score": "C", "Sugar": "Low", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "Moderate score; sodium and processing matter.", "Source_URL": "https://www.tacobell.com/nutrition/info"}, {"Product": "Impossible Burger Patty", "Category": "Plant-Based", "Score": "C", "Sugar": "Low", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Plant-based does not automatically equal A; sodium/processing matter.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Beyond Burger Patty", "Category": "Plant-Based", "Score": "C", "Sugar": "Low", "Additives": "Medium", "Contaminants": "No public product-specific contaminant data", "Transparency": "Medium", "Notes": "Protein positive; sodium/processing reduce score.", "Source_URL": "https://fdc.nal.usda.gov/"}, {"Product": "Amy's Organic Lentil Soup", "Category": "Soup", "Score": "B", "Sugar": "Low", "Additives": "Low", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "Organic/simpler ingredients; sodium must be verified.", "Source_URL": "https://world.openfoodfacts.org/"}, {"Product": "LaraBar Peanut Butter Chocolate Chip", "Category": "Snack Bar", "Score": "B", "Sugar": "Medium", "Additives": "Low", "Contaminants": "No public product-specific contaminant data", "Transparency": "High", "Notes": "Simple ingredients, but sugar remains relevant.", "Source_URL": "https://world.openfoodfacts.org/"}];
+      color: var(--dark);
 
-function scoreClass(s){return (s || 'C').replace(/[^ABCDE]/g,'') || 'C';}
-function render(items){
-  const box = document.getElementById('results');
-  if(!items.length){ box.innerHTML = '<p class="small">No match yet. Try a broader search.</p>'; return; }
-  box.innerHTML = items.map(p => `
-    <div class="result">
-      <div class="score ${scoreClass(p.Score)}">${p.Score}</div>
-      <div>
-        <h3 style="margin:0;color:var(--olive)">${p.Product}</h3>
-        <div class="meta">
-          <span class="chip">${p.Category}</span>
-          <span class="chip">Sugar: ${p.Sugar}</span>
-          <span class="chip">Additives: ${p.Additives}</span>
-          <span class="chip">Transparency: ${p.Transparency}</span>
-        </div>
-        <p class="small"><b>Concern:</b> ${p.Contaminants}</p>
-        <p class="small">${p.Notes}</p>
-        <p class="small"><a target="_blank" href="${p.Source_URL}">Source / verification path</a></p>
-      </div>
-    </div>
-  `).join('');
-}
+    }
 
-function runSearch(){
-  const q = document.getElementById('q').value.toLowerCase().trim();
-  const cat = document.getElementById('cat').value;
-  let items = products.filter(p => 
-    (!q || Object.values(p).join(' ').toLowerCase().includes(q)) &&
-    (!cat || p.Category === cat)
-  );
-  render(items.slice(0,30));
-}
+    header {
 
-function quick(v){document.getElementById('q').value=v;runSearch();return false;}
+      padding: 44px 20px 30px;
 
-function capture(){
-  const e = document.getElementById('email').value.trim();
-  const msg = document.getElementById('emailMsg');
-  if(!e || !e.includes('@')){msg.textContent='Enter a valid email.'; return;}
-  let emails = JSON.parse(localStorage.getItem('cfs_emails') || '[]');
-  emails.push({email:e, date:new Date().toISOString()});
-  localStorage.setItem('cfs_emails', JSON.stringify(emails));
-  msg.textContent='Saved locally for MVP. Connect to Mailchimp/ConvertKit later.';
-}
+      text-align: center;
 
-(function init(){
-  const cats = [...new Set(products.map(p=>p.Category))].sort();
-  const sel = document.getElementById('cat');
-  cats.forEach(c => { const o = document.createElement('option'); o.value=c; o.textContent=c; sel.appendChild(o); });
-  render(products.slice(0,12));
-  document.getElementById('q').addEventListener('input', runSearch);
-  document.getElementById('cat').addEventListener('change', runSearch);
-})();
-</script>
-</body>
-</html>
+      background: linear-gradient(135deg, var(--olive), #596C45);
+
+      color: white;
+
+    }
+
+    header h1 {
+
+      margin: 0;
+
+      font-size: 38px;
+
+      letter-spacing: 0.5px;
+
+    }
+
+    header p {
+
+      margin: 10px auto 0;
+
+      max-width: 680px;
+
+      color: #EEF5E1;
+
+      font-size: 17px;
+
+      line-height: 1.45;
+
+    }
+
+    main {
+
+      max-width: 960px;
+
+      margin: 0 auto;
+
+      padding: 28px 16px 60px;
+
+    }
+
+    .search-box {
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      padding: 20px;
+
+      box-shadow: 0 8px 24px rgba(30, 40, 20, 0.08);
+
+      margin-top
